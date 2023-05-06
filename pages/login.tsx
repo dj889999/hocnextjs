@@ -3,10 +3,12 @@ import React from 'react'
 import { useAuth } from '@/hooks/useAuth'
 import { EmptyLayout } from '@/components/layouts'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 // export interface ILoginProps {}
 
 export default function Login() {
+	const router = useRouter()
 	const { profile, loading, login, logout } = useAuth({
 		revalidateOnMount: false,
 	})
@@ -15,6 +17,7 @@ export default function Login() {
 		try {
 			await login()
 			console.log('Login success redirect to home page')
+			router.push('/about')
 		} catch (error) {
 			console.log(error)
 		}
@@ -40,6 +43,8 @@ export default function Login() {
 		<EmptyLayout>
 			<h1>Login</h1>
 			<Link href="/">Home</Link>
+			<Link href="/about">About</Link>
+			<Link href="/login">Login</Link>
 			<p>
 				<strong>Profile:</strong> {JSON.stringify(profile || {}, null, 2)}
 			</p>

@@ -13,7 +13,7 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
 		...options,
 	})
 
-	const loading = !profile && !error
+	const loading = profile === undefined && error === undefined
 
 	async function login() {
 		await authApi.login({
