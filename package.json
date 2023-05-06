@@ -15,9 +15,6 @@
 		"@emotion/styled": "^11.11.0",
 		"@mui/icons-material": "^5.11.16",
 		"@mui/material": "^5.12.3",
-		"@types/node": "20.0.0",
-		"@types/react": "18.2.5",
-		"@types/react-dom": "18.2.4",
 		"axios": "^1.4.0",
 		"cookies": "^0.8.0",
 		"eslint": "8.39.0",
@@ -32,7 +29,10 @@
 	"devDependencies": {
 		"@types/axios": "^0.14.0",
 		"@types/cookies": "^0.7.7",
-		"@types/http-proxy": "^1.17.11"
+		"@types/http-proxy": "^1.17.11",
+		"@types/node": "20.0.0",
+		"@types/react": "18.2.5",
+		"@types/react-dom": "18.2.4"
 	},
 	"compilerOptions": {
 		"baseUrl": ".",
@@ -54,6 +54,9 @@
 			],
 			"@/styles/*": [
 				"styles/*"
+			],
+			"@/utils/*": [
+				"utils/*"
 			]
 		}
 	}

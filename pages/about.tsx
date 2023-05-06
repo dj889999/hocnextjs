@@ -1,8 +1,8 @@
-import { AdminLayout } from '@/components/layouts'
-import React from 'react'
+import { MainLayout } from '@/components/layouts'
+import { Box } from '@mui/material'
 
 export default function AboutPage() {
-	return <h1>About Page</h1>
+	return <Box>About Page</Box>
 }
 
-AboutPage.Layout = AdminLayout
+AboutPage.Layout = MainLayout
