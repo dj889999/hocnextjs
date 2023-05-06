@@ -1,6 +1,6 @@
-import { Box, Container, Stack } from '@mui/material'
+import { Box, Container, Stack, Link as MUILink } from '@mui/material'
 import { ROUTE_LIST } from './routes'
-import Link from '@/pages/Link'
+import Link from 'next/link'
 
 export default function HeaderDesktop() {
 	return (
@@ -8,8 +8,8 @@ export default function HeaderDesktop() {
 			<Container>
 				<Stack direction="row" justifyContent="flex-end">
 					{ROUTE_LIST.map((route) => (
-						<Link key={route.path} href={route.path} mx={1}>
-							{route.label}
+						<Link key={route.path} href={route.path}>
+							<MUILink mx={1}>{route.label}</MUILink>
 						</Link>
 					))}
 				</Stack>

@@ -12,7 +12,7 @@ export function AuthProtected({ children }: AuthProtectedProps) {
 
 	useEffect(() => {
 		if (!loading && !profile?.username) router.push('/login')
-	}, [profile, loading, error])
+	}, [profile, loading, error, router])
 
 	if (!profile?.username) return <div>loading...</div>
 
