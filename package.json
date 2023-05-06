@@ -1,22 +1,54 @@
 {
-  "name": "test-nextjs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@types/node": "20.0.0",
-    "@types/react": "18.2.5",
-    "@types/react-dom": "18.2.4",
-    "eslint": "8.39.0",
-    "eslint-config-next": "13.4.1",
-    "next": "13.4.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.0.4"
-  }
+	"name": "test-nextjs",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@types/node": "20.0.0",
+		"@types/react": "18.2.5",
+		"@types/react-dom": "18.2.4",
+		"axios": "^1.4.0",
+		"cookies": "^0.8.0",
+		"eslint": "8.39.0",
+		"eslint-config-next": "13.4.1",
+		"http-proxy": "^1.18.1",
+		"next": "13.4.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"swr": "^2.1.5",
+		"typescript": "5.0.4"
+	},
+	"devDependencies": {
+		"@types/axios": "^0.14.0",
+		"@types/cookies": "^0.7.7",
+		"@types/http-proxy": "^1.17.11"
+	},
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/api/*": [
+				"api-client/*"
+			],
+			"@/components/*": [
+				"components/*"
+			],
+			"@/hooks/*": [
+				"hooks/*"
+			],
+			"@/pages/*": [
+				"pages/*"
+			],
+			"@/public/*": [
+				"public/*"
+			],
+			"@/styles/*": [
+				"styles/*"
+			]
+		}
+	}
 }

@@ -1,0 +1,8 @@
+import { AdminLayout } from '@/components/layouts'
+import React from 'react'
+
+export default function AboutPage() {
+	return <h1>About Page</h1>
+}
+
+AboutPage.Layout = AdminLayout
