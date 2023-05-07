@@ -1,8 +1,8 @@
-import { Box, Button, Container, Stack } from '@mui/material'
+import { Box, Container, Stack } from '@mui/material'
 import { ROUTE_LIST } from './routes'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import clsx from 'clsx'
-import Link from '@/pages/Link'
 
 export default function HeaderDesktop() {
 	const router = useRouter()
@@ -13,15 +13,15 @@ export default function HeaderDesktop() {
 					{ROUTE_LIST.map((route) => {
 						return (
 							<Link
-								href={{
-									pathname: route.path,
-								}}
 								key={route.path}
-								sx={{
-									'&.active': {
-										color: 'primary.main',
-									},
-									mx: 1,
+								href={route.path}
+								passHref
+								className={clsx({ active: route.path === router.pathname })}
+								style={{
+									textDecoration: 'none',
+									color: 'inherit',
+									marginRight: 10,
+									fontWeight: 500,
 								}}
 							>
 								{route.label}
