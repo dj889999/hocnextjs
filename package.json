@@ -13,7 +13,9 @@
 		"@emotion/react": "^11.11.0",
 		"@emotion/server": "^11.11.0",
 		"@emotion/styled": "^11.11.0",
+		"@hookform/resolvers": "^3.1.0",
 		"@mui/icons-material": "^5.11.16",
+		"@mui/lab": "^5.0.0-alpha.129",
 		"@mui/material": "^5.12.3",
 		"axios": "^1.4.0",
 		"clsx": "^1.2.1",
@@ -24,8 +26,10 @@
 		"next": "13.4.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"react-hook-form": "^7.43.9",
 		"swr": "^2.1.5",
-		"typescript": "5.0.4"
+		"typescript": "5.0.4",
+		"yup": "^1.1.1"
 	},
 	"devDependencies": {
 		"@types/axios": "^0.14.0",
@@ -41,23 +45,8 @@
 			"@/api/*": [
 				"api-client/*"
 			],
-			"@/components/*": [
-				"components/*"
-			],
-			"@/hooks/*": [
-				"hooks/*"
-			],
-			"@/pages/*": [
-				"pages/*"
-			],
-			"@/public/*": [
-				"public/*"
-			],
-			"@/styles/*": [
-				"styles/*"
-			],
-			"@/utils/*": [
-				"utils/*"
+			"@/*": [
+				"/*"
 			]
 		}
 	}

@@ -1,18 +1,8 @@
 import { LayoutProps } from '@/models'
 import { Box, Stack, Typography } from '@mui/material'
-import { useEffect } from 'react'
-import { Header } from '../common'
-import Footer from '../common/footer'
+import { Header, Footer } from '../common'
 
 export function MainLayout({ children }: LayoutProps) {
-	useEffect(() => {
-		console.log('MainLayout mounted')
-
-		return () => {
-			console.log('MainLayout unmounted')
-		}
-	}, [])
-
 	return (
 		<Stack minHeight="100vh">
 			<Header />

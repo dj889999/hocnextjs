@@ -1,7 +1,6 @@
 import { red } from '@mui/material/colors'
 import { createTheme } from '@mui/material/styles'
 import { Roboto } from 'next/font/google'
-import useMediaQuery from '@mui/material/useMediaQuery'
 
 export const roboto = Roboto({
 	weight: ['300', '400', '500', '700'],
@@ -47,8 +46,4 @@ export const theme = createTheme({
 			},
 		},
 	},
-})
-
-export const darktheme = createTheme({
-
 })

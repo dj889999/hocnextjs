@@ -1,57 +1,44 @@
-import { authApi } from '@/api-client/auth-api'
-import React from 'react'
+import { LoginForm } from '@/components/auth'
 import { useAuth } from '@/hooks/useAuth'
-import { EmptyLayout } from '@/components/layouts'
-import Link from 'next/link'
+import { LoginPayload } from '@/models'
+import { Container, Paper, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 
 // export interface ILoginProps {}
 
 export default function Login() {
 	const router = useRouter()
-	const { profile, loading, login, logout } = useAuth({
+	const { login } = useAuth({
 		revalidateOnMount: false,
 	})
 
-	async function handleLogin() {
+	async function handleLoginOnSubmit(payload: LoginPayload) {
 		try {
-			await login()
-			console.log('Login success redirect to home page')
-			router.push('/about')
-		} catch (error) {
-			console.log(error)
-		}
-	}
-	async function handleLogout() {
-		try {
-			await logout()
-			console.log('Logout success redirect to home page')
-		} catch (error) {
-			console.log(error)
-		}
-	}
-	async function handleGetUser() {
-		try {
-			const user = await authApi.getProfile()
-			console.log('User', user)
+			await login(payload)
+			router.push('/')
 		} catch (error) {
 			console.log(error)
 		}
 	}
 
 	return (
-		<EmptyLayout>
-			<h1>Login</h1>
-			<Link href="/">Home</Link>
-			<Link href="/about">About</Link>
-			<Link href="/login">Login</Link>
-			<p>
-				<strong>Profile:</strong> {JSON.stringify(profile || {}, null, 2)}
-			</p>
-
-			<button onClick={handleLogin}>Login</button>
-			<button onClick={handleGetUser}>Get Profile</button>
-			<button onClick={handleLogout}>Logout</button>
-		</EmptyLayout>
+		<Container maxWidth="xs">
+			<Paper
+				elevation={4}
+				sx={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					m: 'auto',
+					mt: 8,
+					p: 4,
+				}}
+			>
+				<Typography variant="h4" component="h1">
+					Login To Your Account
+				</Typography>
+				<LoginForm onSubmit={handleLoginOnSubmit} />
+			</Paper>
+		</Container>
 	)
 }

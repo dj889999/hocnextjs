@@ -8,7 +8,26 @@ export const ROUTE_LIST = [
 		path: '/about',
 	},
 	{
-		label: 'Login',
-		path: '/login',
+		label: 'Dasboard',
+		path: '/dashboard',
+		requireAuth: true,
+	},
+]
+
+export const ROUTE_USER = [
+	{
+		label: 'Profile',
+		path: '/profile',
+	},
+	{
+		label: 'Account',
+		path: '/account',
+	},
+	{
+		label: 'Dashboard',
+		path: '/dashboard',
+	},
+	{
+		label: 'Logout',
 	},
 ]
